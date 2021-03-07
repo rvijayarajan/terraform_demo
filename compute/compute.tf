@@ -80,7 +80,10 @@ resource "aws_autoscaling_group" "webapp_asg" {
   min_size = var.asg_min
 #   wait_for_elb_capacity = false
   force_delete = true
-  launch_configuration = aws_launch_template.bupttemplate.id
+  launch_template {
+    id = aws_launch_template.bupttemplate.id
+    version = "$Latest"
+  }
   load_balancers = [aws_elb.webapp_elb.name]
   tag {
     key = "Name"
