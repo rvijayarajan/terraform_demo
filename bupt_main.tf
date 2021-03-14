@@ -21,3 +21,6 @@ module "compute" {
   vpc_id = module.vpc.vpc_id
 }
 
+module "ci" {
+  source = "./ci"
+}
