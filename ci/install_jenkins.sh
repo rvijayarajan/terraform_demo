@@ -5,3 +5,4 @@ rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 yum install jenkins -y
 yum install java-1.8.0-openjdk-devel -y
 yum install ant -y
+yum install git -y
