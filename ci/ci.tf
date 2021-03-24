@@ -34,7 +34,7 @@ resource "aws_instance" "jenkins_server" {
   ami = "ami-005c06c6de69aee84"
   instance_type = "t2.micro"
   key_name = "buptlab"
-  iam_instance_profile = "AWSS3CustomActionAccess"
+  iam_instance_profile = "JenkinsCIRole"
   user_data = file("ci/install_jenkins.sh")
   vpc_security_group_ids = [aws_security_group.jenkins_inbound_sg.id]
   tags = {
