@@ -9,6 +9,6 @@ yum install jenkins -y
 yum install java-1.8.0-openjdk-devel -y
 yum install ant -y
 yum install git -y
-cat /etc/init.d/jenkins | sed /.*\\/etc\\/init\\.d\\/functions/a\ 'export PATH="/usr/local/bin:/usr/bin:$PATH"'
+#cat /etc/init.d/jenkins | sed /.*\\/etc\\/init\\.d\\/functions/a\ 'export PATH="/usr/local/bin:/usr/bin:$PATH"'
 # systemctl daemon-reload
-service jenkins restart
+service jenkins restart 
