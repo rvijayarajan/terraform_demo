@@ -1,3 +1,24 @@
+resource "aws_security_group" "mysql_inbound_sg" {
+  name = "mysql_inbound"
+  description = "Allow access for mysql"
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  vpc_id = var.vpc_id
+  tags = {
+      Name = "buptlab_mysql"
+  }
+}
+
 resource "aws_security_group" "ec2_instance_inbound_sg" {
   name = "ec2_inbound"
   description = "Allow access for Ec2"
